@@ -6,7 +6,17 @@ public class Main {
         //Greetings
         System.out.println("Welcome to Blackjack!");
 
-        System.out.println(Rank.ACE.rankName + Suit.CLUB.getLetter() + " it " + Rank.ACE.rankValue);
+        Deck deck = new Deck();
+
+        Card card1 = new Card(Rank.JACK, Suit.DIAMOND);
+        Card card2 = new Card(Rank.ACE, Suit.HEART);
+        Card card3 = new Card(Rank.FIVE, Suit.CLUB);
+
+        deck.addCard(card1);
+        deck.addCard(card2);
+        deck.addCard(card3);
+
+        System.out.println(deck);
 
         //Create new game
         Game game = new Game();

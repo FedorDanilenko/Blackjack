@@ -23,7 +23,7 @@ public enum Rank {
         this.rankValue = rankValue;
     }
 
-    public String getRankName() {
+    public String getLetter() {
         return rankName;
     }
 
