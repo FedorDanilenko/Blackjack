@@ -6,8 +6,9 @@ public class Main {
         //Greetings
         System.out.println("Welcome to Blackjack!");
 
-        Deck deck = new Deck(true);
-
+        Deck deck = new Deck(true, 3);
+        deck.shuffle();
+        System.out.println(deck.getDeck().size());
         System.out.println(deck);
 
         //Create new game
