@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Rank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677410120983</updated>
       <workItem from="1677410122140" duration="4440000" />
-      <workItem from="1677503261025" duration="3147000" />
+      <workItem from="1677503261025" duration="4170000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -84,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677416259848</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="create deck and method addCard">
+      <created>1677508685643</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677508685643</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +97,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add README" />
     <MESSAGE value="create Card with Suit and Rank" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Card with Suit and Rank" />
+    <MESSAGE value="create deck and method addCard" />
+    <option name="LAST_COMMIT_MESSAGE" value="create deck and method addCard" />
   </component>
 </project>

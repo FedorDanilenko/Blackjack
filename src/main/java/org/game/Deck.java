@@ -6,8 +6,15 @@ public class Deck {
 
     private ArrayList<Card> deck;
 
-    public Deck() {
+    public Deck(boolean makeDeck) {
         deck = new ArrayList<Card>();
+        if (makeDeck) {
+            for (Suit suit:Suit.values()) {
+                for (Rank rank:Rank.values()) {
+                    deck.add(new Card(rank, suit));
+                }
+            }
+        }
     }
 
     public void addCard(Card card) {
@@ -25,5 +32,9 @@ public class Deck {
         }
 
         return out;
+    }
+
+    public ArrayList<Card> getDeck() {
+        return deck;
     }
 }
