@@ -11,7 +11,7 @@ public class Deck {
     public Deck(boolean makeDeck, int numDeck) {
         if (makeDeck) {
             //set the number of decks (1-8)
-            if (numDeck >= 1 && numDeck <= 8)
+            if (numDeck >= 0 && numDeck <= 8)
                 deck = new ArrayList<Card>(numDeck);
                 for (int i = 1; i <=numDeck; i++){
                     //Go through all the suits
@@ -26,6 +26,10 @@ public class Deck {
     }
     public void addCard(Card card) {
         deck.add(card);
+    }
+
+    public Card takeCard() {
+        return deck.remove(0);
     }
 
 

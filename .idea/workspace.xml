@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
     </list>
@@ -66,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1677410120983</updated>
       <workItem from="1677410122140" duration="4440000" />
-      <workItem from="1677503261025" duration="7350000" />
+      <workItem from="1677503261025" duration="7398000" />
+      <workItem from="1677609680676" duration="2803000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -96,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677509862599</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add in deck method shuffle (2 type)">
+      <created>1677516249132</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677516249132</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +117,7 @@
     <MESSAGE value="create Card with Suit and Rank" />
     <MESSAGE value="create deck and method addCard" />
     <MESSAGE value="create new constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="create new constructor" />
+    <MESSAGE value="add in deck method shuffle (2 type)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add in deck method shuffle (2 type)" />
   </component>
 </project>

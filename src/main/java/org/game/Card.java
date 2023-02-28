@@ -24,6 +24,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return rank.getLetter() + suit.getLetter() + " (" + rank.rankValue + ")";
+        return rank.getLetter() + suit.getLetter();
     }
 }
