@@ -3,8 +3,8 @@ package org.game;
 public class Dealer extends Person{
 
 
-    public Dealer(String name, Hand hand) {
-        super(name, hand);
+    public Dealer() {
+        super.setName("Dealer");
     }
 
     public void printFirstCard() {

@@ -6,9 +6,9 @@ public abstract class Person {
 
     private Hand hand;
 
-    public Person(String name, Hand hand) {
-        this.name = name;
-        this.hand = hand;
+    public Person() {
+        this.name = "";
+        this.hand = new Hand();
     }
 
     public String getName() {
