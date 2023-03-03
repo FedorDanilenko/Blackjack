@@ -35,7 +35,7 @@ public class Hand {
 
     public String toString() {
 
-        String out = "In hand:\n";
+        String out = "";
 
         for (Card card: hand) {
             out += card.toString();

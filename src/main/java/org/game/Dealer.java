@@ -8,6 +8,6 @@ public class Dealer extends Person{
     }
 
     public void printFirstCard() {
-        System.out.println("A " + getName() + " has:\n"+ getHand().getHand().get(1).toString() + "\n##");
+        System.out.println("A " + getName() + " has:\n"+ getHand().getHand().get(0).toString() + "\n##");
     }
 }

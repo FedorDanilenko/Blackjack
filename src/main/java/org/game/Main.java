@@ -9,6 +9,5 @@ public class Main {
         //Create new game
         Game game = new Game();
 
-
     }
 }

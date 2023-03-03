@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,8 @@
       <workItem from="1677503261025" duration="7398000" />
       <workItem from="1677609680676" duration="3102000" />
       <workItem from="1677698038367" duration="2691000" />
-      <workItem from="1677787162011" duration="2289000" />
+      <workItem from="1677787162011" duration="2393000" />
+      <workItem from="1677869314803" duration="3008000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -123,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677700914240</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="create Player and update Game">
+      <created>1677789905488</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677789905488</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +145,7 @@
     <MESSAGE value="add in deck method shuffle (2 type)" />
     <MESSAGE value="create Hand class" />
     <MESSAGE value="create Person and Dealer class" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Person and Dealer class" />
+    <MESSAGE value="create Player and update Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Player and update Game" />
   </component>
 </project>

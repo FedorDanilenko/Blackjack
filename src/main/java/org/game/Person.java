@@ -40,4 +40,8 @@ public abstract class Person {
         return "A " + name + " has "
                 + hand.toString();
     }
+
+    public void printHand() {
+        System.out.println("A " + this.name + " has:\n" + this.hand);
+    }
 }
