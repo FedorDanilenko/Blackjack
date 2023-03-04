@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
+    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="create startRound">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/exsepsions/InvalidArg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,8 @@
       <workItem from="1677609680676" duration="3102000" />
       <workItem from="1677698038367" duration="2691000" />
       <workItem from="1677787162011" duration="2393000" />
-      <workItem from="1677869314803" duration="3008000" />
+      <workItem from="1677869314803" duration="3314000" />
+      <workItem from="1677912907953" duration="6999000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677789905488</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="create startRound">
+      <created>1677873203955</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677873203955</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="create Hand class" />
     <MESSAGE value="create Person and Dealer class" />
     <MESSAGE value="create Player and update Game" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Player and update Game" />
+    <MESSAGE value="create startRound" />
+    <option name="LAST_COMMIT_MESSAGE" value="create startRound" />
   </component>
 </project>

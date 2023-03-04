@@ -7,13 +7,15 @@ import java.util.Random;
 public class Deck {
 
     private ArrayList<Card> deck;
+    private final int numDeck;
 
     public Deck(boolean makeDeck, int numDeck) {
+        this.numDeck = numDeck;
         if (makeDeck) {
             //set the number of decks (1-8)
             if (numDeck >= 0 && numDeck <= 8)
                 deck = new ArrayList<Card>(numDeck);
-                for (int i = 1; i <=numDeck; i++){
+            for (int i = 1; i <=numDeck; i++){
                     //Go through all the suits
                     for (Suit suit : Suit.values()) {
                         //Go through all the ranks
@@ -60,5 +62,9 @@ public class Deck {
 
     public ArrayList<Card> getDeck() {
         return deck;
+    }
+
+    public boolean checkDeckSize() {
+        return deck.size() < ((52 * numDeck) * 25/100);
     }
 }

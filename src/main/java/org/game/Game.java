@@ -49,6 +49,9 @@ public class Game {
         //Check Blackjack
         if (checkBlackjack()) {
             startRound();
+        } else {
+            player.makeDecision(deck);
+            losses = player.getHand().getValue() > 21 ? + 1 : + 0;
         }
     }
 
