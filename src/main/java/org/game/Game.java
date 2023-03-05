@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Game {
 
-    private Deck deck;
+    private Deck deck, discarded;
 
     public Dealer dealer;
     public Player player;
@@ -24,6 +24,8 @@ public class Game {
         } while (numDecks < 1 || numDecks > 8);
 
         deck = new Deck(true, numDecks);
+        discarded = new Deck();
+
 //        deck = new Deck();
 
 //        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
@@ -57,7 +59,8 @@ public class Game {
                 }
                 if (deck.checkDeckSize()) {
                     System.out.println("Reshuffle decks");
-                    deck = new Deck(true, numDecks);
+                    deck.getDeck().addAll(discarded.getDeck());
+                    discarded.getDeck().clear();
                     deck.shuffle();
                 }
                 startRound();
@@ -68,8 +71,11 @@ public class Game {
     public void startRound() {
         System.out.println("***New Round!***");
 
-        dealer.setHand(new Hand());
-        player.setHand(new Hand());
+
+        dealer.clearHand(discarded);
+        player.clearHand(discarded);
+        System.out.println(deck.getDeck().size());
+        System.out.println(discarded.getDeck().size());
 
         //Give the dealer 2 cards
         dealer.hit(deck);

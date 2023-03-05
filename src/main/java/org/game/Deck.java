@@ -34,6 +34,10 @@ public class Deck {
         deck.add(card);
     }
 
+    public void addCards(Hand hand) {
+        this.deck.addAll(hand.getHand());
+    }
+
     public Card takeCard() {
         return deck.remove(0);
     }

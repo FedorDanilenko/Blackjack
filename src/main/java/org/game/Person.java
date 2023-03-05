@@ -44,4 +44,9 @@ public abstract class Person {
     public void printHand() {
         System.out.println("A " + this.name + " has:\n" + this.hand);
     }
+
+    public void clearHand(Deck discarded) {
+        discarded.addCards(getHand());
+        getHand().getHand().clear();
+    }
 }
