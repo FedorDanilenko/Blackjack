@@ -24,12 +24,12 @@ public class Hand {
         aceNum = hand.stream()
                 .filter( c -> c.getRank().equals(Rank.ACE))
                 .toArray().length;
-        if (value > 21 && aceNum > 0) {
-            while (value > 21) {
+
+            while (value > 21 && aceNum > 0) {
                 value -= 10;
                 aceNum--;
             }
-        }
+
         return value;
     }
 

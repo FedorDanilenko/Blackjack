@@ -17,7 +17,7 @@ public class Player extends Person {
             if (getHand().getValue() == 21) {
                 System.out.println("Player has 21!. Dealer's turn.");
             } else if (getHand().getValue() > 21) {
-                System.out.println("Player has gone over 21. Player lost. Next Round.");
+                System.out.println("Player has gone over 21. Player lost.");
             } else {
                 System.out.println("(H)it or (S)tand: ");
                 String decision = sc.nextLine();

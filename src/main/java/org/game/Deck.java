@@ -7,7 +7,7 @@ import java.util.Random;
 public class Deck {
 
     private ArrayList<Card> deck;
-    private final int numDeck;
+    private int numDeck = 0;
 
     public Deck(boolean makeDeck, int numDeck) {
         this.numDeck = numDeck;
@@ -25,6 +25,10 @@ public class Deck {
                     }
             }
         }
+    }
+
+    public Deck() {
+        deck = new ArrayList<Card>();
     }
     public void addCard(Card card) {
         deck.add(card);
