@@ -1,5 +1,9 @@
 package org.game;
 
+/**
+ * Contains the suits of a Card, Short names
+ */
+
 public enum Suit {
 
     SPADE('S'),

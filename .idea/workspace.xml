@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
+    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="add discard deck, save memories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Suit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,25 +50,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/mnt/STUFF/JAVA/Tinkoff/ProbTest/Prob9",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/STUFF/JAVA/Tinkoff/ProbTest/Prob9&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -85,7 +92,8 @@
       <workItem from="1677787162011" duration="2393000" />
       <workItem from="1677869314803" duration="3314000" />
       <workItem from="1677912907953" duration="7282000" />
-      <workItem from="1678016548794" duration="7831000" />
+      <workItem from="1678016548794" duration="8549000" />
+      <workItem from="1678128288412" duration="4481000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -164,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678031018485</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add discard deck, save memories">
+      <created>1678032877330</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678032877330</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +197,7 @@
     <MESSAGE value="create startRound" />
     <MESSAGE value="create method makeDecision on Player" />
     <MESSAGE value="Blackjack v0.1 (create full nonstop game)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blackjack v0.1 (create full nonstop game)" />
+    <MESSAGE value="add discard deck, save memories" />
+    <option name="LAST_COMMIT_MESSAGE" value="add discard deck, save memories" />
   </component>
 </project>

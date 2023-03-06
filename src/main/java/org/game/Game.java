@@ -4,26 +4,33 @@ import java.util.Scanner;
 
 public class Game {
 
+    //Declare variables needed for Game class
     private Deck deck, discarded;
-
     public Dealer dealer;
     public Player player;
-
     private int win, losses, push, numDecks;
 
+    /**
+     * Constructor for Game, creates our variables and starts the Game
+     */
     public Game() {
 
+        //Set the score to 0
         win = 0;
         losses = 0;
         push = 0;
 
         Scanner sc = new Scanner(System.in);
+
+        //Ask how many decks player wants
         do {
             System.out.print("How many deck you want (1-8): ");
             numDecks = sc.nextInt();
         } while (numDecks < 1 || numDecks > 8);
 
+        //Create a new deck with 52 cards
         deck = new Deck(true, numDecks);
+        //Create a new empty deck
         discarded = new Deck();
 
 //        deck = new Deck();
@@ -35,16 +42,20 @@ public class Game {
 //        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
 //        deck.addCard(new Card(Rank.EIGHT,Suit.DIAMOND));
 
+        //Create the People
         dealer = new Dealer();
         player = new Player();
 
+        //Shuffle the deck and start the first round
         deck.shuffle();
         startRound();
+
         while (true) {
             //Check Blackjack
             if (checkBlackjack()) {
                 startRound();
             } else {
+                //Allow the player to make decisions
                 player.makeDecision(deck);
                 losses = player.getHand().getValue() > 21 ? losses + 1 : losses;
                 dealer.printHand(); //Show dealer cards, when player lose
@@ -57,12 +68,13 @@ public class Game {
                     //Check who win
                     checkWin();
                 }
+
+                //Check size of the deck and reshuffle if size < 25%
                 if (deck.checkDeckSize()) {
-                    System.out.println("Reshuffle decks");
-                    deck.getDeck().addAll(discarded.getDeck());
-                    discarded.getDeck().clear();
-                    deck.shuffle();
+                    deck.reshuffle(discarded);
                 }
+
+                //start the round over
                 startRound();
             }
         }
@@ -71,9 +83,10 @@ public class Game {
     public void startRound() {
         System.out.println("***New Round!***");
 
-
+        //Clear all hands
         dealer.clearHand(discarded);
         player.clearHand(discarded);
+        //Show size of decks
         System.out.println(deck.getDeck().size());
         System.out.println(discarded.getDeck().size());
 
@@ -91,23 +104,30 @@ public class Game {
 
     }
 
+    //Method for checking who got a Blackjack
     public boolean checkBlackjack() {
+        //Check first dealer's first card
         if (dealer.getHand().getHand().get(0).getRank().equals(Rank.ACE)) {
+            //If it ACE check who got a Blackjack
+            //Both
             if (dealer.hasBlackjack() && player.hasBlackjack()) {
                 dealer.printHand();
                 System.out.println("You both hase a Blackjack. It's a push.");
                 push++;
                 return true;
+                //Only dealer
             } else if (dealer.hasBlackjack()) {
                 dealer.printHand();
                 System.out.println("Dealer has a Blackjack! Player Lose!");
                 losses++;
                 return true;
+                //Only Player
             } else if (player.hasBlackjack()) {
                 System.out.println("You have a Blackjack! Player Wins!");
                 win++;
                 return true;
             }
+            //Also checking player if dealer doesn't have a ACE
         } else if (player.hasBlackjack()) {
             System.out.println("You have a Blackjack! Player Wins!");
             win++;

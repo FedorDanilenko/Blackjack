@@ -6,6 +6,9 @@ public abstract class Person {
 
     private Hand hand;
 
+    /**
+     * Create a new Person
+     */
     public Person() {
         this.name = "";
         this.hand = new Hand();
@@ -31,6 +34,7 @@ public abstract class Person {
         hand.addCard(deck);
     }
 
+    //Check on Blackjack
     public boolean hasBlackjack() {
         return hand.getValue() == 21;
     }
@@ -41,6 +45,9 @@ public abstract class Person {
                 + hand.toString();
     }
 
+    /**
+     * Prints a formatted version of the Person's hand
+     */
     public void printHand() {
         System.out.println("A " + this.name + " has:\n" + this.hand);
     }

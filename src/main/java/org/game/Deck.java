@@ -27,6 +27,7 @@ public class Deck {
         }
     }
 
+    //constructor for empty deck
     public Deck() {
         deck = new ArrayList<Card>();
     }
@@ -34,6 +35,7 @@ public class Deck {
         deck.add(card);
     }
 
+    //Method for clear hands
     public void addCards(Hand hand) {
         this.deck.addAll(hand.getHand());
     }
@@ -42,11 +44,13 @@ public class Deck {
         return deck.remove(0);
     }
 
-
     public void shuffle() {
         ArrayList<Card> shuffled = new ArrayList<Card>();
+        //iterate through the size of the deck, so each card can be pulled
         while (deck.size() > 0) {
+            //Select a random index to pull
             int rand = (int) (Math.random() * (deck.size()-1));
+            //Add this random card to the new shuffled deck
             shuffled.add(deck.remove(rand));
         }
         deck = shuffled;
@@ -58,9 +62,12 @@ public class Deck {
     @Override
     public String toString() {
 
+        //A string to hold everything we're going to return
         String out = "In deck:\n";
 
+        //for each Card "card" in the deck
         for (Card card: deck) {
+            //add the card and the escape character for a new line
             out += card.toString();
             out += "\n";
         }
@@ -72,7 +79,15 @@ public class Deck {
         return deck;
     }
 
+    //Check deck's size for reshuffle
     public boolean checkDeckSize() {
         return deck.size() < ((52 * numDeck) * 25/100);
+    }
+
+    public void reshuffle(Deck discard) {
+        System.out.println("Reshuffle decks");
+        getDeck().addAll(discard.getDeck());
+        discard.getDeck().clear();
+        shuffle();
     }
 }

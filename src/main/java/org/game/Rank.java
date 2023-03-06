@@ -1,5 +1,8 @@
 package org.game;
 
+/**
+ * Contains the Ranks of Cards, Short names, and Values
+ */
 public enum Rank {
     ACE("A", 11),
     TWO("2", 2),
