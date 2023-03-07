@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="add discard deck, save memories">
+    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Dealer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Rank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Suit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +85,8 @@
       <workItem from="1677869314803" duration="3314000" />
       <workItem from="1677912907953" duration="7282000" />
       <workItem from="1678016548794" duration="8549000" />
-      <workItem from="1678128288412" duration="4481000" />
+      <workItem from="1678128288412" duration="4627000" />
+      <workItem from="1678205864690" duration="5506000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -179,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678032877330</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add mode comments">
+      <created>1678133058984</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678133058984</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +198,22 @@
     <MESSAGE value="create method makeDecision on Player" />
     <MESSAGE value="Blackjack v0.1 (create full nonstop game)" />
     <MESSAGE value="add discard deck, save memories" />
-    <option name="LAST_COMMIT_MESSAGE" value="add discard deck, save memories" />
+    <MESSAGE value="add mode comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mode comments" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/game/Game.java</url>
+          <line>122</line>
+          <properties class="org.game.Game" method="checkBlackjack">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

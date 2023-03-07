@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class Player extends Person {
 
+    private int cash = 0;
+
     Scanner sc = new Scanner(System.in);
 
     //Create a new Player
@@ -45,5 +47,11 @@ public class Player extends Person {
         }
     }
 
+    public int getCash() {
+        return cash;
+    }
 
+    public void setCash(int cash) {
+        this.cash = cash;
+    }
 }

@@ -9,6 +9,8 @@ public class Game {
     public Dealer dealer;
     public Player player;
     private int win, losses, push, numDecks;
+    private int bit;
+    Scanner sc = new Scanner(System.in);
 
     /**
      * Constructor for Game, creates our variables and starts the Game
@@ -19,8 +21,6 @@ public class Game {
         win = 0;
         losses = 0;
         push = 0;
-
-        Scanner sc = new Scanner(System.in);
 
         //Ask how many decks player wants
         do {
@@ -45,14 +45,23 @@ public class Game {
         //Create the People
         dealer = new Dealer();
         player = new Player();
+        player.setCash(1000);
 
         //Shuffle the deck and start the first round
         deck.shuffle();
         startRound();
 
         while (true) {
+            if (player.getCash() <= 0) {
+                System.out.println("Player don't has money");
+                break;
+            }
             //Check Blackjack
-            if (checkBlackjack()) {
+            else if (checkBlackjack()) {
+                if (player.getCash() <= 0) {
+                    System.out.println("Player don't has money");
+                    break;
+                }
                 startRound();
             } else {
                 //Allow the player to make decisions
@@ -73,8 +82,10 @@ public class Game {
                 if (deck.checkDeckSize()) {
                     deck.reshuffle(discarded);
                 }
-
-                //start the round over
+                if (player.getCash() <= 0) {
+                    System.out.println("Player don't has money");
+                    break;
+                }
                 startRound();
             }
         }
@@ -82,13 +93,17 @@ public class Game {
 
     public void startRound() {
         System.out.println("***New Round!***");
+        //how much money the player has
+        System.out.println("Player has: " + player.getCash() + "$");
+        System.out.println("Player's bet: ");
+        bit = sc.nextInt();
 
         //Clear all hands
         dealer.clearHand(discarded);
         player.clearHand(discarded);
         //Show size of decks
-        System.out.println(deck.getDeck().size());
-        System.out.println(discarded.getDeck().size());
+//        System.out.println(deck.getDeck().size());
+//        System.out.println(discarded.getDeck().size());
 
         //Give the dealer 2 cards
         dealer.hit(deck);
@@ -120,17 +135,20 @@ public class Game {
                 dealer.printHand();
                 System.out.println("Dealer has a Blackjack! Player Lose!");
                 losses++;
+                player.setCash(player.getCash() - bit);
                 return true;
                 //Only Player
             } else if (player.hasBlackjack()) {
                 System.out.println("You have a Blackjack! Player Wins!");
                 win++;
+                player.setCash((int) (player.getCash() + bit * 2.5));
                 return true;
             }
             //Also checking player if dealer doesn't have a ACE
         } else if (player.hasBlackjack()) {
             System.out.println("You have a Blackjack! Player Wins!");
             win++;
+            player.setCash((int) (player.getCash() + bit * 2.5));
             return true;
         }
         return false;
@@ -141,12 +159,15 @@ public class Game {
         int playerValue = player.getHand().getValue();
         if (dealerValue > 21) {
             win++;
+            player.setCash(player.getCash() + bit);
             System.out.println("Dealer busts. Player wins!");
         } else if (dealerValue > playerValue) {
             losses++;
+            player.setCash(player.getCash() - bit);
             System.out.println("Player lost.");
         } else if (dealerValue < playerValue) {
             win++;
+            player.setCash(player.getCash() + bit);
             System.out.println("Player wins!");
         } else {
             push++;
