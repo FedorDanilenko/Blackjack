@@ -9,7 +9,6 @@ public class Game {
     public Dealer dealer;
     public Player player;
     private int win, losses, push, numDecks;
-    private int bit;
     Scanner sc = new Scanner(System.in);
 
     /**
@@ -96,7 +95,17 @@ public class Game {
         //how much money the player has
         System.out.println("Player has: " + player.getCash() + "$");
         System.out.println("Player's bet: ");
-        bit = sc.nextInt();
+        int b = sc.nextInt();
+        while (true) {
+            if (b > player.getCash()) {
+                System.out.println("Player only has: " + player.getCash() + "$");
+                System.out.println("Player's bet: ");
+                b = sc.nextInt();
+            } else {
+                player.setBit(b);
+                break;
+            }
+        }
 
         //Clear all hands
         dealer.clearHand(discarded);
@@ -135,20 +144,20 @@ public class Game {
                 dealer.printHand();
                 System.out.println("Dealer has a Blackjack! Player Lose!");
                 losses++;
-                player.setCash(player.getCash() - bit);
+                player.setCash(player.getCash() - player.getBit());
                 return true;
                 //Only Player
             } else if (player.hasBlackjack()) {
                 System.out.println("You have a Blackjack! Player Wins!");
                 win++;
-                player.setCash((int) (player.getCash() + bit * 2.5));
+                player.setCash((int) (player.getCash() + player.getBit() * 2.5));
                 return true;
             }
             //Also checking player if dealer doesn't have a ACE
         } else if (player.hasBlackjack()) {
             System.out.println("You have a Blackjack! Player Wins!");
             win++;
-            player.setCash((int) (player.getCash() + bit * 2.5));
+            player.setCash((int) (player.getCash() + player.getBit() * 2.5));
             return true;
         }
         return false;
@@ -159,15 +168,15 @@ public class Game {
         int playerValue = player.getHand().getValue();
         if (dealerValue > 21) {
             win++;
-            player.setCash(player.getCash() + bit);
+            player.setCash(player.getCash() + player.getBit());
             System.out.println("Dealer busts. Player wins!");
         } else if (dealerValue > playerValue) {
             losses++;
-            player.setCash(player.getCash() - bit);
+            player.setCash(player.getCash() - player.getBit());
             System.out.println("Player lost.");
         } else if (dealerValue < playerValue) {
             win++;
-            player.setCash(player.getCash() + bit);
+            player.setCash(player.getCash() + player.getBit());
             System.out.println("Player wins!");
         } else {
             push++;

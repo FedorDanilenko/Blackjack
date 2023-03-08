@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Player extends Person {
 
     private int cash = 0;
+    private int bit = 0;
 
     Scanner sc = new Scanner(System.in);
 
@@ -30,12 +31,22 @@ public class Player extends Person {
                 System.out.println("Player has gone over 21. Player lost.");
             } else {
                 //Show available commands
-                System.out.println("(H)it or (S)tand: ");
+                System.out.println("(H)it, (S)tand or (D)ouble: ");
                 String decision = sc.nextLine();
                 if (decision.equals("Hit") || decision.equals("H")) {
                     hit(deck);
                     printHand();
                     makeDecision(deck);
+                } else if (decision.equals("Double") || decision.equals("D")) {
+                    if (getBit() * 2 > getCash()) {
+                        System.out.println("Player doesn't have enough money for double.");
+                        makeDecision(deck);
+                    } else {
+                        System.out.println("Player double bet");
+                        setBit(getBit() * 2);
+                        hit(deck);
+                        printHand();
+                    }
                 } else if (decision.equals("Stand") || decision.equals("S")) {
                     //base case
                     System.out.println("Player Stands. Dealer's turn.");
@@ -53,5 +64,13 @@ public class Player extends Person {
 
     public void setCash(int cash) {
         this.cash = cash;
+    }
+
+    public int getBit() {
+        return bit;
+    }
+
+    public void setBit(int bit) {
+        this.bit = bit;
     }
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
+    <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="add Player double comand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
@@ -86,7 +86,8 @@
       <workItem from="1677912907953" duration="7282000" />
       <workItem from="1678016548794" duration="8549000" />
       <workItem from="1678128288412" duration="4627000" />
-      <workItem from="1678205864690" duration="5506000" />
+      <workItem from="1678205864690" duration="5754000" />
+      <workItem from="1678275313571" duration="1955000" />
     </task>
     <task id="LOCAL-00001" summary="add README">
       <created>1677410688556</created>
@@ -179,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678133058984</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add Player money and bet">
+      <created>1678211867127</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678211867127</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,14 +207,15 @@
     <MESSAGE value="Blackjack v0.1 (create full nonstop game)" />
     <MESSAGE value="add discard deck, save memories" />
     <MESSAGE value="add mode comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add mode comments" />
+    <MESSAGE value="add Player money and bet" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Player money and bet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/game/Game.java</url>
-          <line>122</line>
+          <line>131</line>
           <properties class="org.game.Game" method="checkBlackjack">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
