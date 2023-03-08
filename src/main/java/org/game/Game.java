@@ -64,7 +64,7 @@ public class Game {
                 startRound();
             } else {
                 //Allow the player to make decisions
-                player.makeDecision(deck);
+                player.makeDecision(deck, player.getHand());
                 losses = player.getHand().getValue() > 21 ? losses + 1 : losses;
                 dealer.printHand(); //Show dealer cards, when player lose
                 if (!(player.getHand().getValue() > 21)) { //Dealer takes cards, if player has not lost
@@ -132,7 +132,7 @@ public class Game {
     public boolean checkBlackjack() {
         //Check first dealer's first card
         if (dealer.getHand().getHand().get(0).getRank().equals(Rank.ACE)) {
-            //If it ACE check who got a Blackjack
+            //If it ACES check who got a Blackjack
             //Both
             if (dealer.hasBlackjack() && player.hasBlackjack()) {
                 dealer.printHand();
@@ -165,7 +165,22 @@ public class Game {
 
     public void checkWin() {
         int dealerValue = dealer.getHand().getValue();
-        int playerValue = player.getHand().getValue();
+        int playerValue;
+        int n = 1;
+        if (player.isSplitFlag()) {
+            for ( Hand hand : player.getSplitHands() ) {
+                System.out.println("Player's hand " + n );
+                n ++;
+                playerValue = hand.getValue();
+                checkW(dealerValue, playerValue);
+            }
+        } else {
+            playerValue = player.getHand().getValue();
+            checkW(dealerValue, playerValue);
+        }
+    }
+
+    private void checkW(int dealerValue, int playerValue) {
         if (dealerValue > 21) {
             win++;
             player.setCash(player.getCash() + player.getBit());

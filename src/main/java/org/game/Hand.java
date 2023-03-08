@@ -14,6 +14,7 @@ public class Hand {
     public void addCard(Deck deck) {
         hand.add(deck.takeCard());
     }
+    public void addCard(Hand oldhand) { hand.add(oldhand.getHand().remove(0)); }
 
     public int getValue() {
 
