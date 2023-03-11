@@ -35,49 +35,32 @@ public class Player extends Person {
                 //base case
                 System.out.println("Player has gone over 21. Player lost.");
                 //check if player has same rank cards
-            } else if (!splitFlag && getHand().getHand().get(0).getRank().equals(getHand().getHand().get(1).getRank())) {
-                //Split it on two hand
-                System.out.println("Do you want to split (Y)es or (N)o");
-                String decision = sc.nextLine();
-                if (decision.equals("Yes") || decision.equals("Y")) {
-                    splitFlag = true;
-                    splitHands.get(0).addCard(getHand());
-                    splitHands.get(0).addCard(deck);
-                    splitHands.get(1).addCard(getHand());
-                    splitHands.get(1).addCard(deck);
-                    int n = 1;
-                    for (Hand hand : splitHands) {
-                        System.out.println("Player's hand " + n + " :");
-                        System.out.println(hand);
-                        makeDecision(deck, hand);
-                        n = 2;
-                    }
-                } else if (decision.equals("No") || decision.equals("N")) {
-                    splitFlag = true;
-                    makeDecision(deck, playerHand);
-                }
             } else {
                 //Show available commands
-                System.out.println("(H)it, (S)tand or (D)ouble: ");
+                if (getHand().getHand().size() <= 2) {
+                    System.out.println("(H)it, (S)tand or (D)ouble: ");
+                } else System.out.println("(H)it, (S)tand: ");
                 String decision = sc.nextLine();
                 switch (decision) {
-                    case "Hit", "H" -> {
+                    case "Hit", "hit", "H", "h" -> {
                         hit(deck);
                         System.out.println(playerHand);
                         makeDecision(deck, playerHand);
                     }
-                    case "Double", "D" -> {
+                    case "Double", "double", "D", "d" -> {
                         if (getBit() * 2 > getCash()) {
                             System.out.println("Player doesn't have enough money for double.");
                             makeDecision(deck, playerHand);
-                        } else {
+                        } else if (getHand().getHand().size() <= 2){
                             System.out.println("Player double bet");
                             setBit(getBit() * 2);
                             hit(deck);
                             System.out.println(playerHand);
+                        } else {
+                            throw new InvalidArg("Only (H)it or (S)tand");
                         }
                     }
-                    case "Stand", "S" ->
+                    case "Stand", "stand", "S", "s" ->
                         //base case
                             System.out.println("Player Stands. Dealer's turn.");
                     default -> throw new InvalidArg("Only (H)it or (S)tand");
@@ -111,15 +94,8 @@ public class Player extends Person {
         return splitFlag;
     }
 
-    public void setSplitFlag(boolean splitFlag) {
-        this.splitFlag = splitFlag;
-    }
-
     public ArrayList<Hand> getSplitHands() {
         return splitHands;
     }
 
-    public void setSplitHands(ArrayList<Hand> splitHands) {
-        this.splitHands = splitHands;
-    }
 }
