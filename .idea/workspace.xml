@@ -7,7 +7,6 @@
     <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678542195276</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update some exceptions">
+      <created>1678544442629</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678544442629</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +234,8 @@
     <MESSAGE value="add mode comments" />
     <MESSAGE value="add Player money and bet" />
     <MESSAGE value="update &quot;double&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update &quot;double&quot;" />
+    <MESSAGE value="update some exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="update some exceptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

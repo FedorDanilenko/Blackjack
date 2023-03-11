@@ -11,7 +11,7 @@ public class Game {
     private Deck deck, discarded;
     public Dealer dealer;
     public Player player;
-    private int win, losses, push, numDecks;
+    private int win, losses, push, numDecks, incure;
     Scanner sc = new Scanner(System.in);
 
     /**
@@ -29,7 +29,7 @@ public class Game {
             try {
                 System.out.print("How many deck you want (1-8): ");
                 numDecks = sc.nextInt();
-            }catch (InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Only 1-8!");
                 sc.next();
             }
@@ -40,14 +40,14 @@ public class Game {
         //Create a new empty deck
         discarded = new Deck();
 
-//        deck = new Deck();
+        deck = new Deck();
 
-//        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
-//        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
-//        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
-//        deck.addCard(new Card(Rank.NINE,Suit.DIAMOND));
-//        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
-//        deck.addCard(new Card(Rank.EIGHT,Suit.DIAMOND));
+        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
+        deck.addCard(new Card(Rank.NINE,Suit.DIAMOND));
+        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
+        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
+        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
+        deck.addCard(new Card(Rank.EIGHT,Suit.DIAMOND));
 
         //Create the People
         dealer = new Dealer();
@@ -55,7 +55,7 @@ public class Game {
         player.setCash(1000);
 
         //Shuffle the deck and start the first round
-        deck.shuffle();
+//        deck.shuffle();
         startRound();
 
         while (true) {
@@ -151,12 +151,28 @@ public class Game {
     public boolean checkBlackjack() {
         //Check first dealer's first card
         if (dealer.getHand().getHand().get(0).getRank().equals(Rank.ACE)) {
+            //insurance
+            incure = 0;
+            System.out.println("Do you want to insure for " + player.getBit() / 2 + "$");
+            System.out.println("(Y)es or (N)o: ");
+            String des = sc.next();
+            switch (des) {
+                case "Yes", "yes", "Y", "y" -> {
+                    incure = player.getBit()/2;
+                }
+                case "No", "no", "N", "n" -> System.out.println("No insurance");
+                default -> System.out.println("(Y)es or (N)o: ");
+            }
             //If it ACES check who got a Blackjack
             //Both
             if (dealer.hasBlackjack() && player.hasBlackjack()) {
                 dealer.printHand();
                 System.out.println("You both hase a Blackjack. It's a push.");
                 push++;
+                if (incure > 0) {
+                    System.out.println("Insurance played");
+                    player.setCash(player.getCash() + incure);
+                }
                 return true;
                 //Only dealer
             } else if (dealer.hasBlackjack()) {
@@ -164,13 +180,25 @@ public class Game {
                 System.out.println("Dealer has a Blackjack! Player Lose!");
                 losses++;
                 player.setCash(player.getCash() - player.getBit());
+                if (incure > 0) {
+                    System.out.println("Insurance played");
+                    player.setCash(player.getCash() + incure);
+                }
                 return true;
                 //Only Player
             } else if (player.hasBlackjack()) {
                 System.out.println("You have a Blackjack! Player Wins!");
                 win++;
                 player.setCash((int) (player.getCash() + player.getBit() * 2.5));
+                if (incure > 0) {
+                    System.out.println("Insurance not played");
+                    player.setCash(player.getCash() - incure);
+                }
                 return true;
+            }
+            if (incure > 0) {
+                System.out.println("Insurance not played");
+                player.setCash(player.getCash() - incure);
             }
             //Also checking player if dealer doesn't have a ACE
         } else if (player.hasBlackjack()) {
