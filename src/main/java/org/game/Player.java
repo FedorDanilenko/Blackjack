@@ -14,9 +14,6 @@ public class Player extends Person {
     private int cash = 0;
     private int bit = 0;
 
-    private ArrayList<Hand> splitHands = new ArrayList<>(Arrays.asList(new Hand(), new Hand()));
-    private boolean splitFlag = false;
-
     Scanner sc = new Scanner(System.in);
 
     //Create a new Player
@@ -88,14 +85,6 @@ public class Player extends Person {
 
     public void setBit(int bit) {
         this.bit = bit;
-    }
-
-    public boolean isSplitFlag() {
-        return splitFlag;
-    }
-
-    public ArrayList<Hand> getSplitHands() {
-        return splitHands;
     }
 
 }

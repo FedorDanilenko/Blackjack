@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3bd715e8-2cab-4aee-938a-29ee3079136f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678211867127</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update &quot;double&quot;">
+      <created>1678542195276</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678542195276</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,14 +227,15 @@
     <MESSAGE value="add discard deck, save memories" />
     <MESSAGE value="add mode comments" />
     <MESSAGE value="add Player money and bet" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Player money and bet" />
+    <MESSAGE value="update &quot;double&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update &quot;double&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/game/Game.java</url>
-          <line>131</line>
+          <line>150</line>
           <properties class="org.game.Game" method="checkBlackjack">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -1,5 +1,8 @@
 package org.game;
 
+import org.game.exsepsions.InvalidArg;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -23,8 +26,13 @@ public class Game {
 
         //Ask how many decks player wants
         do {
-            System.out.print("How many deck you want (1-8): ");
-            numDecks = sc.nextInt();
+            try {
+                System.out.print("How many deck you want (1-8): ");
+                numDecks = sc.nextInt();
+            }catch (InputMismatchException e) {
+                System.out.println("Only 1-8!");
+                sc.next();
+            }
         } while (numDecks < 1 || numDecks > 8);
 
         //Create a new deck with 52 cards
@@ -95,15 +103,26 @@ public class Game {
         //how much money the player has
         System.out.println("Player has: " + player.getCash() + "$");
         System.out.println("Player's bet: ");
-        int b = sc.nextInt();
+        int b;
         while (true) {
-            if (b > player.getCash()) {
-                System.out.println("Player only has: " + player.getCash() + "$");
-                System.out.println("Player's bet: ");
+            try {
                 b = sc.nextInt();
-            } else {
-                player.setBit(b);
-                break;
+                if (b > player.getCash()) {
+                    System.out.println("Player only has: " + player.getCash() + "$");
+                    System.out.println("Player's bet: ");
+                    b = sc.nextInt();
+                } else if (b < 1) {
+                    System.out.println("Bet must be greater than 0");
+                    System.out.println("Player's bet: ");
+                    b = sc.nextInt();
+                } else {
+                    player.setBit(b);
+                    break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(new InvalidArg("Only number").getMessage());
+                System.out.println("Player's bet: ");
+                sc.next();
             }
         }
 
@@ -165,22 +184,7 @@ public class Game {
 
     public void checkWin() {
         int dealerValue = dealer.getHand().getValue();
-        int playerValue;
-        int n = 1;
-        if (player.isSplitFlag()) {
-            for ( Hand hand : player.getSplitHands() ) {
-                System.out.println("Player's hand " + n );
-                n ++;
-                playerValue = hand.getValue();
-                checkW(dealerValue, playerValue);
-            }
-        } else {
-            playerValue = player.getHand().getValue();
-            checkW(dealerValue, playerValue);
-        }
-    }
-
-    private void checkW(int dealerValue, int playerValue) {
+        int playerValue = player.getHand().getValue();
         if (dealerValue > 21) {
             win++;
             player.setCash(player.getCash() + player.getBit());
@@ -198,4 +202,5 @@ public class Game {
             System.out.println("It's a push.");
         }
     }
+
 }
