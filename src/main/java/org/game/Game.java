@@ -92,6 +92,7 @@ public class Game {
     }
 
     public void startRound() {
+        player.setFlagSplit(0);
         System.out.println("***New Round!***");
         //how much money the player has
         System.out.println("Player has: " + player.getCash() + "$");
@@ -106,7 +107,6 @@ public class Game {
                 } else if (b < 1) {
                     System.out.println("Bet must be greater than 0");
                     System.out.println("Player's bet: ");
-                    b = sc.nextInt();
                 } else {
                     player.setBit(b);
                     break;

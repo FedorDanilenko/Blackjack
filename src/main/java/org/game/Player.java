@@ -14,6 +14,9 @@ public class Player extends Person {
     private int cash = 0; //Player's money
     private int bit = 0; //Player's det
 
+    private String decision;
+     private int flagSplit = 0;
+
     Scanner sc = new Scanner(System.in);
 
     //Create a new Player
@@ -23,18 +26,10 @@ public class Player extends Person {
 
     //Allow the player to make decisions
     public void makeDecision(Deck deck) {
-        String decision;
+        int flagSplit = 0;
         try {
-            if (getHand().getHand().get(0).getRank().equals(getHand().getHand().get(1).getRank()) && getHand().getHand().size() == 2) {
-                System.out.println("Split?\n(Y)es or (N)o: ");
-                decision = sc.nextLine();
-                switch (decision) {
-                    case "Yes", "yes", "Y", "y" -> {
-                        split();
-                    }
-                    case "No", "no", "N", "n" -> System.out.println("Continue");
-                    default -> System.out.println("(Y)es or (N)o: ");
-                }
+            if (checkSplit()) {
+                split();
             //Checking the value of a hand
             } else if (getHand().getValue() == 21) {
                 //base case
@@ -42,7 +37,7 @@ public class Player extends Person {
             } else if (getHand().getValue() > 21) {
                 //base case
                 System.out.println("Player has gone over 21. Player lost.");
-                setCash(getCash()-getBit());
+                setCash(getCash() - getBit());
             } else {
                 //Show available commands
                 if (getHand().getHand().size() <= 2) {
@@ -59,13 +54,18 @@ public class Player extends Person {
                         if (getBit() * 2 > getCash()) {
                             System.out.println("Player doesn't have enough money for double.");
                             makeDecision(deck);
-                        } else if (getHand().getHand().size() <= 2){
+                        } else if (getHand().getHand().size() <= 2) {
                             System.out.println("Player double bet");
                             setBit(getBit() * 2);
                             hit(deck);
                             printHand();
                         } else {
                             throw new InvalidArg("Only (H)it or (S)tand");
+                        }
+                        if (getHand().getValue() > 21) {
+                            //base case
+                            System.out.println("Player has gone over 21. Player lost.");
+                            setCash(getCash() - getBit());
                         }
                     }
                     case "Stand", "stand", "S", "s" ->
@@ -79,6 +79,29 @@ public class Player extends Person {
             System.out.println(e.getMessage());
             makeDecision(deck);
         }
+    }
+
+    private boolean checkSplit() {
+        if (getHand().getHand().get(0).getRank().equals(getHand().getHand().get(1).getRank()) && getHand().getHand().size() == 2) {
+            System.out.println("Split?\n(Y)es or (N)o: ");
+            while (flagSplit == 0) {
+                decision = sc.nextLine();
+                switch (decision) {
+                    case "Yes", "yes", "Y", "y" -> {
+                        split();
+                        flagSplit = 1;
+                        return true;
+                    }
+                    case "No", "no", "N", "n" -> {
+                        System.out.println("Continue");
+                        flagSplit = 2;
+                        return false;
+                    }
+                    default -> System.out.println("(Y)es or (N)o: ");
+                }
+            }
+        }
+        return false;
     }
 
     private static void split() {
@@ -102,4 +125,11 @@ public class Player extends Person {
         this.bit = bit;
     }
 
+    public int getFlagSplit() {
+        return flagSplit;
+    }
+
+    public void setFlagSplit(int flagSplit) {
+        this.flagSplit = flagSplit;
+    }
 }
