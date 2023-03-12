@@ -103,7 +103,6 @@ public class Game {
                 if (b > player.getCash()) {
                     System.out.println("Player only has: " + player.getCash() + "$");
                     System.out.println("Player's bet: ");
-                    b = sc.nextInt();
                 } else if (b < 1) {
                     System.out.println("Bet must be greater than 0");
                     System.out.println("Player's bet: ");
@@ -148,13 +147,23 @@ public class Game {
             incure = 0;
             System.out.println("Do you want to insure for " + player.getBit() / 2 + "$");
             System.out.println("(Y)es or (N)o: ");
-            String des = sc.next();
-            switch (des) {
-                case "Yes", "yes", "Y", "y" -> {
-                    incure = player.getBit()/2;
+            boolean flag = false;
+            String des;
+            while (!flag) {
+                des = sc.next();
+                switch (des) {
+                    case "Yes", "yes", "Y", "y" -> {
+                        incure = player.getBit() / 2;
+                        flag = true;
+                    }
+                    case "No", "no", "N", "n" -> {
+                        System.out.println("No insurance");
+                        flag = true;
+                    }
+                    default -> {
+                        System.out.println("(Y)es or (N)o: ");
+                    }
                 }
-                case "No", "no", "N", "n" -> System.out.println("No insurance");
-                default -> System.out.println("(Y)es or (N)o: ");
             }
             //If it ACES check who got a Blackjack
             //Both

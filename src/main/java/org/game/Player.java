@@ -23,9 +23,20 @@ public class Player extends Person {
 
     //Allow the player to make decisions
     public void makeDecision(Deck deck) {
+        String decision;
         try {
+            if (getHand().getHand().get(0).getRank().equals(getHand().getHand().get(1).getRank()) && getHand().getHand().size() == 2) {
+                System.out.println("Split?\n(Y)es or (N)o: ");
+                decision = sc.nextLine();
+                switch (decision) {
+                    case "Yes", "yes", "Y", "y" -> {
+                        split();
+                    }
+                    case "No", "no", "N", "n" -> System.out.println("Continue");
+                    default -> System.out.println("(Y)es or (N)o: ");
+                }
             //Checking the value of a hand
-            if (getHand().getValue() == 21) {
+            } else if (getHand().getValue() == 21) {
                 //base case
                 System.out.println("Player has 21!. Dealer's turn.");
             } else if (getHand().getValue() > 21) {
@@ -37,7 +48,7 @@ public class Player extends Person {
                 if (getHand().getHand().size() <= 2) {
                     System.out.println("(H)it, (S)tand or (D)ouble: ");
                 } else System.out.println("(H)it, (S)tand: ");
-                String decision = sc.nextLine();
+                decision = sc.nextLine();
                 switch (decision) {
                     case "Hit", "hit", "H", "h" -> {
                         hit(deck);
@@ -68,6 +79,10 @@ public class Player extends Person {
             System.out.println(e.getMessage());
             makeDecision(deck);
         }
+    }
+
+    private static void split() {
+
     }
 
 
