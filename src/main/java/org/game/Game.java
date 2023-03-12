@@ -40,39 +40,31 @@ public class Game {
         //Create a new empty deck
         discarded = new Deck();
 
-        deck = new Deck();
+//        deck = new Deck();
+//        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
+//        deck.addCard(new Card(Rank.NINE,Suit.DIAMOND));
+//        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
+//        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
+//        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
+//        deck.addCard(new Card(Rank.EIGHT,Suit.DIAMOND));
 
-        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
-        deck.addCard(new Card(Rank.NINE,Suit.DIAMOND));
-        deck.addCard(new Card(Rank.ACE,Suit.DIAMOND));
-        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
-        deck.addCard(new Card(Rank.TEN,Suit.DIAMOND));
-        deck.addCard(new Card(Rank.EIGHT,Suit.DIAMOND));
-
-        //Create the People
+        //Create the People and money
         dealer = new Dealer();
         player = new Player();
         player.setCash(1000);
 
         //Shuffle the deck and start the first round
-//        deck.shuffle();
+        deck.shuffle();
         startRound();
 
         while (true) {
-            if (player.getCash() <= 0) {
-                System.out.println("Player don't has money");
-                break;
-            }
             //Check Blackjack
-            else if (checkBlackjack()) {
-                if (player.getCash() <= 0) {
-                    System.out.println("Player don't has money");
-                    break;
-                }
+            if (checkBlackjack()) {
+                //start new round if someone has blackjack
                 startRound();
             } else {
                 //Allow the player to make decisions
-                player.makeDecision(deck, player.getHand());
+                player.makeDecision(deck);
                 losses = player.getHand().getValue() > 21 ? losses + 1 : losses;
                 dealer.printHand(); //Show dealer cards, when player lose
                 if (!(player.getHand().getValue() > 21)) { //Dealer takes cards, if player has not lost
@@ -89,6 +81,7 @@ public class Game {
                 if (deck.checkDeckSize()) {
                     deck.reshuffle(discarded);
                 }
+                //stop game if player doesn't have money
                 if (player.getCash() <= 0) {
                     System.out.println("Player don't has money");
                     break;
@@ -150,8 +143,8 @@ public class Game {
     //Method for checking who got a Blackjack
     public boolean checkBlackjack() {
         //Check first dealer's first card
-        if (dealer.getHand().getHand().get(0).getRank().equals(Rank.ACE)) {
-            //insurance
+        if (dealer.getHand().getHand().get(0).getRank().equals(Rank.ACE) && player.getCash() >= player.getBit()+player.getBit()/2) {
+            //insurance if player has enough money
             incure = 0;
             System.out.println("Do you want to insure for " + player.getBit() / 2 + "$");
             System.out.println("(Y)es or (N)o: ");

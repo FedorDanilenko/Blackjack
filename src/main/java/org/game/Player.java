@@ -11,8 +11,8 @@ import java.util.Scanner;
  */
 public class Player extends Person {
 
-    private int cash = 0;
-    private int bit = 0;
+    private int cash = 0; //Player's money
+    private int bit = 0; //Player's det
 
     Scanner sc = new Scanner(System.in);
 
@@ -22,7 +22,7 @@ public class Player extends Person {
     }
 
     //Allow the player to make decisions
-    public void makeDecision(Deck deck, Hand playerHand) {
+    public void makeDecision(Deck deck) {
         try {
             //Checking the value of a hand
             if (getHand().getValue() == 21) {
@@ -31,7 +31,7 @@ public class Player extends Person {
             } else if (getHand().getValue() > 21) {
                 //base case
                 System.out.println("Player has gone over 21. Player lost.");
-                //check if player has same rank cards
+                setCash(getCash()-getBit());
             } else {
                 //Show available commands
                 if (getHand().getHand().size() <= 2) {
@@ -41,18 +41,18 @@ public class Player extends Person {
                 switch (decision) {
                     case "Hit", "hit", "H", "h" -> {
                         hit(deck);
-                        System.out.println(playerHand);
-                        makeDecision(deck, playerHand);
+                        printHand();
+                        makeDecision(deck);
                     }
                     case "Double", "double", "D", "d" -> {
                         if (getBit() * 2 > getCash()) {
                             System.out.println("Player doesn't have enough money for double.");
-                            makeDecision(deck, playerHand);
+                            makeDecision(deck);
                         } else if (getHand().getHand().size() <= 2){
                             System.out.println("Player double bet");
                             setBit(getBit() * 2);
                             hit(deck);
-                            System.out.println(playerHand);
+                            printHand();
                         } else {
                             throw new InvalidArg("Only (H)it or (S)tand");
                         }
@@ -66,7 +66,7 @@ public class Player extends Person {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            makeDecision(deck, playerHand);
+            makeDecision(deck);
         }
     }
 
